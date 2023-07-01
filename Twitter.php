@@ -37,6 +37,3 @@ class Twitter {
     }
 }
 
-$client = new Twitter();
-$response = $client->post_tweet('teste classe3');
-echo $response;

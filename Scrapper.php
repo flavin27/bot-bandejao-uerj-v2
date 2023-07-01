@@ -1,5 +1,5 @@
 <?php
-
+$teste = [];
 class Scrapper
 {
     private string $url = "https://www.restauranteuniversitario.uerj.br/";
@@ -27,6 +27,8 @@ class Scrapper
                 $data = '';
                 foreach ($innerElements as $innerElement) {
                     $texto_corrigido = $innerElement->textContent;
+                    $texto_corrigido = print_r($texto_corrigido, true);
+                    $texto_corrigido = str_replace(array("\n", "\r"), '', $texto_corrigido);
                     $texto_corrigido = $this->remover_palavras_indesejadas($texto_corrigido);
                     if (preg_match('/^(Segunda|Terça|Quarta|Quinta|Sexta)$/', $texto_corrigido)) {
                         $dia = $texto_corrigido;
@@ -37,7 +39,8 @@ class Scrapper
 
                     if (preg_match('/^(Saladas|Prato Principal|Ovolactovegetariano|Guarnição|Acompanhamentos|Sobremesa)/', $texto_corrigido)) {
                         $texto_corrigido = str_replace(array('Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa', 'Glútem', 'Ovos'), '', $texto_corrigido);
-
+                        $texto_corrigido = strtolower($texto_corrigido);
+                        $texto_corrigido = str_replace('Ã', 'ã', $texto_corrigido);
                         $pratos[] = str_replace(array($dia, $data), '', $texto_corrigido);
                     }
                 }
@@ -57,6 +60,3 @@ class Scrapper
 }
 
 
-$scrapper = new Scrapper();
-$data = $scrapper->getCardapioDia(4);
-print_r($data);
