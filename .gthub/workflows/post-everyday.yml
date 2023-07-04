@@ -1,0 +1,25 @@
+name: post tweet everyday
+on: workflow_dispatch
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    environment: myenvironment
+    steps:
+      - name: Setup PHP with pre-release PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: vimeo/psalm
+      - name: Verificar código
+        uses: actions/checkout@v2
+      - name: Instalar dependências
+        run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Post tweet
+        env:
+          API_KEY: ${{secrets.API_KEY}}
+          API_SECRET_KEY: ${{secrets.API_SECRET_KEY}}
+          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+        run: |
+          php main.php

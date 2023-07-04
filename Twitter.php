@@ -62,5 +62,3 @@ $id = $data->tweet_id;
 $response2 = $client->post_reply("toma ai a respota", $id);
 print_r($response);
 print_r($response2);
-
-
