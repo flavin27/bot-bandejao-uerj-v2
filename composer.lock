@@ -167,9 +167,9 @@
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "PEAR/"
-                ]
+                "psr-4": {
+                    "GrahamCampbell\\ResultType\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1340,5 +1340,5 @@
         "ext-libxml": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }

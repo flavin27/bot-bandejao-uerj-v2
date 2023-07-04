@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ff6be03b8845e34a18c61ba33c33589692502580',
+    'reference' => '54f91e9a71270daffc8a3f0359d27d11c3744cd7',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ff6be03b8845e34a18c61ba33c33589692502580',
+      'reference' => '54f91e9a71270daffc8a3f0359d27d11c3744cd7',
     ),
     'abraham/twitteroauth' => 
     array (
