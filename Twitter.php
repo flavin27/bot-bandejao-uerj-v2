@@ -35,5 +35,32 @@ class Twitter {
         }
         return json_encode($data);
     }
+
+    public function post_reply(string $payload, string $id_string): string {
+        $api = $this->get_api();
+        $response = $api->post("statuses/update", ["status" => $payload, "in_reply_to_status_id" => $id_string]);
+        if ($response) {
+            $data = [
+                'success' => true,
+                'message' => 'reply posted',
+                'tweet_id' => $response->id_str
+            ];
+        } else {
+            $data = [
+                'success' => false,
+                'message' => 'Failed to post reply'
+            ];
+        }
+        return json_encode($data);
+    }
 }
+
+$client = new twitter();
+$response = $client->post_tweet("teste reply");
+$data = json_decode($response);
+$id = $data->tweet_id;
+$response2 = $client->post_reply("toma ai a respota", $id);
+print_r($response);
+print_r($response2);
+
 
