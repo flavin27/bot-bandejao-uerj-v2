@@ -10,7 +10,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          tools: vimeo/psalm
       - name: Verificar código
         uses: actions/checkout@v2
       - name: Instalar dependências
