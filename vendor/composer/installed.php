@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '54f91e9a71270daffc8a3f0359d27d11c3744cd7',
+    'reference' => '740784427134e22bb9b833b4084b122a98cb9073',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '54f91e9a71270daffc8a3f0359d27d11c3744cd7',
+      'reference' => '740784427134e22bb9b833b4084b122a98cb9073',
     ),
     'abraham/twitteroauth' => 
     array (
