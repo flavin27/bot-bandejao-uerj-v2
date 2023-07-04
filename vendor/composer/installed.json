@@ -1376,5 +1376,6 @@
             "install-path": "../vlucas/phpdotenv"
         }
     ],
-    "dev": true
+    "dev": true,
+    "dev-package-names": []
 }
