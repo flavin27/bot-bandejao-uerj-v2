@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'flaivnho/pacote',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4ec7896b9a4ba2bbdd93fddef45904e962707aa3',
+        'reference' => '73ac236b863f21fefeaeca257b459dac78f0813c',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '4ec7896b9a4ba2bbdd93fddef45904e962707aa3',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'abraham/twitteroauth' => array(
             'pretty_version' => '5.0.0',
             'version' => '5.0.0.0',
@@ -34,6 +25,15 @@
             'reference' => '90d087e988ff194065333d16bc5cf649872d9cdb',
             'type' => 'library',
             'install_path' => __DIR__ . '/./ca-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'flaivnho/pacote' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '73ac236b863f21fefeaeca257b459dac78f0813c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4591e35650745e4c8eba4c3d58702064",
+    "content-hash": "4abd18fc8c17f75d2cd3cf19523a660a",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1334,11 +1334,12 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "ext-curl": "*",
-        "ext-dom": "*",
-        "ext-libxml": "*"
-    },
+    "platform": [],
     "platform-dev": [],
+    "platform-overrides": {
+        "ext-curl": "7.0",
+        "ext-dom": "7.0",
+        "ext-libxml": "7.0"
+    },
     "plugin-api-version": "2.3.0"
 }
