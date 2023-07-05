@@ -4,14 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit65831d9d1787abdca99937ea06ab7656
+class ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
     );
 
@@ -19,8 +16,6 @@ class ComposerStaticInit65831d9d1787abdca99937ea06ab7656
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'P' => 
         array (
@@ -59,18 +54,10 @@ class ComposerStaticInit65831d9d1787abdca99937ea06ab7656
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -130,9 +117,9 @@ class ComposerStaticInit65831d9d1787abdca99937ea06ab7656
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit65831d9d1787abdca99937ea06ab7656::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit65831d9d1787abdca99937ea06ab7656::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit65831d9d1787abdca99937ea06ab7656::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -3,7 +3,7 @@
         'name' => 'flaivnho/pacote',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '73ac236b863f21fefeaeca257b459dac78f0813c',
+        'reference' => 'bbeaad3e3975f9e7218176309ef72a13fc59a474',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'flaivnho/pacote' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '73ac236b863f21fefeaeca257b459dac78f0813c',
+            'reference' => 'bbeaad3e3975f9e7218176309ef72a13fc59a474',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -146,13 +146,10 @@
             ),
         ),
         'ralouphie/getallheaders' => array(
-            'pretty_version' => '3.0.3',
-            'version' => '3.0.3.0',
-            'reference' => '120b605dfeb996808c31b6477290a714d356e822',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../ralouphie/getallheaders',
-            'aliases' => array(),
             'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v3.3.0',
@@ -164,22 +161,16 @@
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
-            'pretty_version' => 'v1.27.0',
-            'version' => '1.27.0.0',
-            'reference' => '5bbc823adecdae860bb64756d639ecfec17b050a',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
-            'aliases' => array(),
             'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'symfony/polyfill-mbstring' => array(
-            'pretty_version' => 'v1.27.0',
-            'version' => '1.27.0.0',
-            'reference' => '8ad114f6b39e2c98a8b0e3bd907732c207c2b534',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
-            'aliases' => array(),
             'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'symfony/polyfill-php80' => array(
             'pretty_version' => 'v1.27.0',

@@ -4,7 +4,8 @@
   "require": {
     "noweh/twitter-api-v2-php": "^3.1",
     "vlucas/phpdotenv": "^5.5",
-    "abraham/twitteroauth": "^5.0"
+    "abraham/twitteroauth": "^5.0",
+    "symfony/polyfill-php80": "*"
   },
   "config": {
     "platform": {
@@ -13,5 +14,11 @@
       "ext-libxml": "7.0"
     }
   },
-  "license": "proprietary"
+  "license": "proprietary",
+  "replace": {
+    "symfony/polyfill-ctype": "*",
+    "ralouphie/getallheaders": "*",
+    "symfony/polyfill-mbstring": "*"
+  }
 }
+
