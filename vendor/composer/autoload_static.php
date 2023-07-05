@@ -4,11 +4,11 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462
+class ComposerStaticIniteeeb1a648e9ce8a477b80cc8745c2bea
 {
     public static $files = array (
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
     );
 
@@ -16,23 +16,15 @@ class ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'P' => 
         array (
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
             'PhpOption\\' => 10,
-        ),
-        'N' => 
-        array (
-            'Noweh\\TwitterApi\\' => 17,
         ),
         'G' => 
         array (
-            'GuzzleHttp\\Subscriber\\Oauth\\' => 28,
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
             'GrahamCampbell\\ResultType\\' => 26,
         ),
         'D' => 
@@ -54,38 +46,17 @@ class ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Psr\\Http\\Message\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Psr\\Http\\Client\\' => 
+        'Symfony\\Polyfill\\Ctype\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
-        ),
-        'Noweh\\TwitterApi\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/noweh/twitter-api-v2-php/src',
-        ),
-        'GuzzleHttp\\Subscriber\\Oauth\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/oauth-subscriber/src',
-        ),
-        'GuzzleHttp\\Psr7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'GrahamCampbell\\ResultType\\' => 
         array (
@@ -117,9 +88,9 @@ class ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite8cc94ac62a1886ab942b2aae9d6c462::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticIniteeeb1a648e9ce8a477b80cc8745c2bea::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticIniteeeb1a648e9ce8a477b80cc8745c2bea::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticIniteeeb1a648e9ce8a477b80cc8745c2bea::$classMap;
 
         }, null, ClassLoader::class);
     }
