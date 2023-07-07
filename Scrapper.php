@@ -60,7 +60,7 @@ class Scrapper
 
     private function removeUnwantedWords(string $string): string
     {
-        $unwantedWords = ["Glúten", "ovos", "lactose"];
+        $unwantedWords = ["Glúten", "ovos", "lactose", ""];
         return str_replace($unwantedWords, "", $string);
     }
 
