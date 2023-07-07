@@ -18,7 +18,7 @@ function main(): void {
             $tweet2 = substr($payload, 280);
             $response = $client->post_tweet($tweet1);
             $data = json_decode($response);
-            $id = $data->tweet_id;
+            $id = $data['tweet_id'];
             $response2 = $client->post_reply($tweet2, $id);
             print_r($response . PHP_EOL . $response2);
         } else {
