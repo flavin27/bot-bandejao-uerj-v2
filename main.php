@@ -22,8 +22,7 @@ function main(): void {
             $response2 = $client->post_reply($tweet2, $id);
             print_r($response . PHP_EOL . $response2);
         } else {
-            $texto = "teste docker";
-            $response = $client->post_tweet($texto);
+            $response = $client->post_tweet($payload);
             print_r($response);
         }
 
