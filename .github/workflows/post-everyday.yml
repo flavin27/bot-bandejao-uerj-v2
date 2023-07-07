@@ -26,4 +26,4 @@ jobs:
         run: docker pull ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
       - name: Run the bot image
-        run: docker run --rm -v ${{ github.workspace }}/.env:/app/.env ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
+        run: docker run --rm --env-file .env ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
