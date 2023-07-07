@@ -7,7 +7,7 @@ function main(): void {
     $diaSemana = intval(Date("w")) -1;
     $dias_da_semana = ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta'];
 
-    if ($diaSemana < 5) {
+    if ($diaSemana > 5) {
         $scrapper = new Scrapper();
         $cardapio = $scrapper->getCardapioDia($diaSemana);
 
@@ -22,7 +22,8 @@ function main(): void {
             $response2 = $client->post_reply($tweet2, $id);
             print_r($response . PHP_EOL . $response2);
         } else {
-            $response = $client->post_tweet($payload);
+            $texto = "teste docker";
+            $response = $client->post_tweet($texto);
             print_r($response);
         }
 

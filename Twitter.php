@@ -55,10 +55,4 @@ class Twitter {
     }
 }
 
-$client = new twitter();
-$response = $client->post_tweet("teste reply");
-$data = json_decode($response);
-$id = $data->tweet_id;
-$response2 = $client->post_reply("toma ai a respota", $id);
-print_r($response);
-print_r($response2);
+

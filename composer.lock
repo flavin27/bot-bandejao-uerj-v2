@@ -627,5 +627,5 @@
         "ext-dom": "7.0",
         "ext-libxml": "7.0"
     },
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
