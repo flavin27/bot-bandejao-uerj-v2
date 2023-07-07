@@ -25,7 +25,7 @@ class Twitter {
             $data = [
                 'success' => true,
                 'message' => 'tweet posted',
-                'tweet_id' => $response->tweet_id
+                'tweet_id' => $response->id_str
             ];
         } else {
             $data = [
