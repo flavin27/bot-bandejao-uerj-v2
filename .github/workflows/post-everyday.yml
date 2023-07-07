@@ -1,5 +1,7 @@
 name: post tweet everyday
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: '0 14 * * *'
 permissions:
   contents: read
 jobs:
