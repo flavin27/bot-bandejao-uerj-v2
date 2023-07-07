@@ -31,7 +31,11 @@ function main(): void {
     }
 }
 
-main();
+function teste():void {
+    $teste = new Twitter;
+    $keys = $teste->getKeys();
+    print_r($keys);
+}
 
-
+teste();
 

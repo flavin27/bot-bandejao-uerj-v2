@@ -54,6 +54,9 @@ class Twitter {
         }
         return json_encode($data);
     }
+    public function getKeys(): array {
+        return [$this->apiKey, $this->accessToken];
+    }
 }
 
 
