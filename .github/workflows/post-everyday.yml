@@ -11,7 +11,7 @@ jobs:
     environment: myenvironment
     steps:
       - name: Create `.env` File
-        uses: SpicyPizza/create-envfile@1
+        uses: SpicyPizza/create-envfile@master
         with:
           envkey_API_KEY: ${{secrets.API_KEY}}
           envkey_API_SECRET_KEY: ${{secrets.API_SECRET_KEY}}
