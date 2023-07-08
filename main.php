@@ -28,14 +28,14 @@ function main(): void {
             print_r($response);
         }
 
+    } else {
+        $client = new Twitter;
+        $response = $client->post_tweet("docker");
+        print_r($response);
     }
 }
 
-function teste():void {
-    $teste = new Twitter;
-    $keys = $teste->getKeys();
-    print_r($keys);
-}
 
-teste();
+
+main();
 
