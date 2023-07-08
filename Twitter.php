@@ -12,10 +12,10 @@ class Twitter {
     private string $accessTokenSecret;
 
     public function __construct() {
-        $this->apiKey = getenv('API_KEY');
-        $this->apiSecret = getenv('API_SECRET_KEY');
-        $this->accessToken = getenv('ACCESS_TOKEN');
-        $this->accessTokenSecret = getenv('ACCESS_TOKEN_SECRET');
+        $this->apiKey = $_ENV['API_KEY'];
+        $this->apiSecret = $_ENV['API_SECRET_KEY'];
+        $this->accessToken = $_ENV['ACCESS_TOKEN'];
+        $this->accessTokenSecret = $_ENV['ACCESS_TOKEN_SECRET'];
     }
     public function get_api(): TwitterOAuth {
         return new TwitterOAuth($this->apiKey, $this->apiSecret, $this->accessToken, $this->accessTokenSecret);
