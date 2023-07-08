@@ -3,7 +3,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Dotenv\Dotenv;
 
-Dotenv::createUnsafeImmutable(__DIR__ . '/.env')->safeLoad();
+Dotenv::createUnsafeImmutable(__DIR__)->safeLoad();
 
 class Twitter {
     private string $apiKey;
