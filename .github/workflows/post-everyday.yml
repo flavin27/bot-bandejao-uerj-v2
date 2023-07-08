@@ -10,16 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: myenvironment
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Make envfile
-        run: |
-          echo "API_KEY=${{secrets.API_KEY}}" > .env
-          echo "API_SECRET_KEY=${{secrets.API_SECRET_KEY}}" >> .env
-          echo "ACCESS_TOKEN=${{secrets.ACCESS_TOKEN}}" >> .env
-          echo "ACCESS_TOKEN_SECRET=${{secrets.ACCESS_TOKEN_SECRET}}" >> .env
-
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
@@ -27,5 +17,9 @@ jobs:
         run: docker pull ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
       - name: Run the bot image
-        run: |
-          docker run --rm --env-file .env -v ${{ github.workspace }}:/app ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        run: docker run --rm --env API_KEY --env API_SECRET_KEY --env ACCESS_TOKEN --env ACCESS_TOKEN_SECRET ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
