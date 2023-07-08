@@ -10,6 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     environment: myenvironment
     steps:
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_API_KEY: ${{secrets.API_KEY}}
+          envkey_API_SECRET_KEY: ${{secrets.API_SECRET_KEY}}
+          envkey_ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+          envkey_ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
+          file_name: .env
+
       - name: Log into registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
@@ -17,11 +26,5 @@ jobs:
         run: docker pull ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
       - name: Run the bot image
-        run: |
-          docker run --rm \
-            -e API_KEY="${{ secrets.API_KEY }}" \
-            -e API_SECRET_KEY="${{ secrets.API_SECRET_KEY }}" \
-            -e ACCESS_TOKEN="${{ secrets.ACCESS_TOKEN }}" \
-            -e ACCESS_TOKEN_SECRET="${{ secrets.ACCESS_TOKEN_SECRET }}" \
-            ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest \
-            php -f main.php "${{ secrets.API_KEY }}" "${{ secrets.API_SECRET_KEY }}" "${{ secrets.ACCESS_TOKEN }}" "${{ secrets.ACCESS_TOKEN_SECRET }}"
+        run: docker run --rm --env-file .env ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
+
