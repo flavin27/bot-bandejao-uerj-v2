@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: myenvironment
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Make envfile
         run: |
           echo "API_KEY=${{secrets.API_KEY}}" > .env
@@ -24,5 +27,5 @@ jobs:
         run: docker pull ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
       - name: Run the bot image
-        run: docker run --rm --env-file .env ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
-
+        run: |
+          docker run --rm --env-file .env -v ${{ github.workspace }}:/app ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
