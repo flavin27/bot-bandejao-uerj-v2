@@ -7,7 +7,7 @@ function main(): void {
     $diaSemana = intval(Date("w")) -1;
     $dias_da_semana = ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta'];
 
-    if ($diaSemana < 5) {
+    if ($diaSemana < 5 & $diaSemana > -1) {
         $scrapper = new Scrapper();
         $cardapio = $scrapper->getCardapioDia($diaSemana);
 
