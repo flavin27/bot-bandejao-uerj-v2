@@ -30,9 +30,11 @@ class Scrapper
                     $data = $this->extractData($texto_corrigido, $data);
 
                     if (preg_match('/^(Saladas|Prato Principal|Ovolactovegetariano|Guarnição|Acompanhamentos|Sobremesa)/', $texto_corrigido)) {
-                        $texto_corrigido = $this->removeUnwantedWords($texto_corrigido);
+                        $texto_corrigido = str_replace(array('Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa'), '', $texto_corrigido);
                         $pratos[] = $this->removeDateAndDay($texto_corrigido, $dia, $data);
                     }
+
+
                 }
             }
         }
@@ -58,10 +60,10 @@ class Scrapper
         return $string;
     }
 
-    private function removeUnwantedWords(string $string): string
+    private function filterCategoria(string $texto_corrigido): string
     {
-        $unwantedWords = ["Glúten", "ovos", "lactose", ""];
-        return str_replace($unwantedWords, "", $string);
+        $categorias = ['Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa'];
+        return str_replace($categorias, '', $texto_corrigido);
     }
 
     private function removeDateAndDay(string $string, string $day, string $date): string
@@ -91,5 +93,9 @@ class Scrapper
         $cardapio = $this->scrape_data();
         return $cardapio[$dia];
     }
+
 }
 
+$client = new Scrapper;
+$data = $client->getCardapioDia(2);
+print_r($data);
