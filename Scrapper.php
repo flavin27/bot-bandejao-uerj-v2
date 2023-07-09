@@ -29,12 +29,7 @@ class Scrapper
                     $dia = $this->extractDia($texto_corrigido, $dia);
                     $data = $this->extractData($texto_corrigido, $data);
 
-                    if (preg_match('/^(Saladas|Prato Principal|Ovolactovegetariano|Guarnição|Acompanhamentos|Sobremesa)/', $texto_corrigido)) {
-                        $texto_corrigido = str_replace(array('Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa'), '', $texto_corrigido);
-                        $pratos[] = $this->removeDateAndDay($texto_corrigido, $dia, $data);
-                    }
-
-
+                    $this->processPrato($texto_corrigido, $dia, $data, $pratos);
                 }
             }
         }
@@ -60,12 +55,6 @@ class Scrapper
         return $string;
     }
 
-    private function filterCategoria(string $texto_corrigido): string
-    {
-        $categorias = ['Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa'];
-        return str_replace($categorias, '', $texto_corrigido);
-    }
-
     private function removeDateAndDay(string $string, string $day, string $date): string
     {
         $string = strtolower($string);
@@ -89,13 +78,20 @@ class Scrapper
         }
         return $data;
     }
-    public function getCardapioDia(int $dia): array {
+
+    private function processPrato(string $texto_corrigido, string $dia, string $data, array &$pratos): void
+    {
+        if (preg_match('/^(Saladas|Prato Principal|Ovolactovegetariano|Guarnição|Acompanhamentos|Sobremesa)/', $texto_corrigido)) {
+            $texto_corrigido = str_replace(array('Saladas', 'Prato Principal', 'Ovolactovegetariano', 'Guarnição', 'Acompanhamentos', 'Sobremesa'), '', $texto_corrigido);
+            $pratos[] = $this->removeDateAndDay($texto_corrigido, $dia, $data);
+        }
+    }
+
+    public function getCardapioDia(int $dia): array
+    {
         $cardapio = $this->scrape_data();
         return $cardapio[$dia];
     }
-
 }
 
-$client = new Scrapper;
-$data = $client->getCardapioDia(2);
-print_r($data);
+
