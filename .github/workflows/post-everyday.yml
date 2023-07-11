@@ -23,8 +23,8 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Pull the bot image
-        run: docker pull ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
+        run: docker pull ghcr.io/flavin27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
       - name: Run the bot image
-        run: docker run --env-file .env ghcr.io/flaviodev27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
+        run: docker run --env-file .env ghcr.io/flavin27/bot-bandejao-uerj-v2/bot-bandejao-uerj-v2:latest
 
