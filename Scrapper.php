@@ -52,13 +52,19 @@ class Scrapper
     {
         $string = print_r($string, true);
         $string = str_replace(["\n", "\r"], '', $string);
+        $string = str_replace('Ã', 'ã', $string);
+        $string = str_replace('É', 'é', $string);
+        $string = str_replace('À', 'à', $string);
+        $string = str_replace('Í', 'í', $string);
+        $string = str_replace('Ó', 'ó', $string);
+        $string = str_replace('Ç', 'ç', $string);
+        $string = str_replace('Ê', 'ê', $string);
         return $string;
     }
 
     private function removeDateAndDay(string $string, string $day, string $date): string
     {
         $string = strtolower($string);
-        $string = str_replace('Ã', 'ã', $string);
         $string = str_replace([$day, $date], '', $string);
         return $string;
     }
