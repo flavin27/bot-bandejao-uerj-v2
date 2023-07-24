@@ -35,7 +35,5 @@ function main(): void {
     }
 }
 
-
-
 main();
 

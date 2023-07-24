@@ -18,16 +18,20 @@ class Twitter {
         $this->accessTokenSecret = $_ENV['ACCESS_TOKEN_SECRET'];
     }
     public function get_api(): TwitterOAuth {
-        return new TwitterOAuth($this->apiKey, $this->apiSecret, $this->accessToken, $this->accessTokenSecret);
+        $connection = new TwitterOAuth($this->apiKey, $this->apiSecret, $this->accessToken, $this->accessTokenSecret);
+        $connection->setApiVersion('2');
+        return $connection;
     }
     public function post_tweet(string $payload): string {
         $api = $this->get_api();
-        $response = $api->post("statuses/update", ["status" => $payload]);
+        $response = $api->post("tweets", ["text" => $payload], true);
+        $response = json_encode($response);
+        $response = json_decode($response, true);
         if ($response) {
             $data = [
                 'success' => true,
                 'message' => 'tweet posted',
-                'tweet_id' => $response->id_str
+                'tweet_id' => $response['data']['id']
             ];
         } else {
             $data = [
@@ -40,12 +44,14 @@ class Twitter {
 
     public function post_reply(string $payload, string $id_string): string {
         $api = $this->get_api();
-        $response = $api->post("statuses/update", ["status" => $payload, "in_reply_to_status_id" => $id_string]);
+        $response = $api->post("tweets", ["text" => $payload, "reply" => ["in_reply_to_tweet_id" => $id_string]], true);
+        $response = json_encode($response);
+        $response = json_decode($response, true);
         if ($response) {
             $data = [
                 'success' => true,
                 'message' => 'reply posted',
-                'tweet_id' => $response->id_str
+                'tweet_id' => $response['data']['id']
             ];
         } else {
             $data = [
