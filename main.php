@@ -12,6 +12,7 @@ function main(): void {
         $cardapio = $scrapper->getCardapioDia($diaSemana);
         if (empty($cardapio)) {
             echo 'Deu ruim no site da uerj :p';
+            die;
         }
 
         $client = new Twitter;
