@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 require 'Scrapper.php';
 
-class ScrapperTest extends testCase
+class ScrapperTest extends TestCase
 {
     public function testScrapeDataReturnsArray()
     {

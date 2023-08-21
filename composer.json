@@ -3,7 +3,8 @@
   "description": "seila",
   "require": {
     "vlucas/phpdotenv": "^5.5",
-    "abraham/twitteroauth": "^5.0"
+    "abraham/twitteroauth": "^5.0",
+    "phpunit/phpunit": "^10.3"
   },
   "config": {
     "platform": {
@@ -12,8 +13,5 @@
       "ext-libxml": "7.0"
     }
   },
-  "license": "proprietary",
-  "require-dev": {
-    "phpunit/phpunit": "^10.3"
-  }
+  "license": "proprietary"
 }

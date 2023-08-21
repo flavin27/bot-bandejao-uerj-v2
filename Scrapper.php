@@ -95,6 +95,9 @@ class Scrapper
 
     public function getCardapioDia(int $dia): array
     {
+        if (empty($cardapio)) {
+            return [];
+        }
         $cardapio = $this->scrape_data();
         return $cardapio[$dia];
     }
