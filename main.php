@@ -1,5 +1,5 @@
 <?php
-require_once 'Scrapper.php';
+require_once 'Scraper.php';
 require_once 'Twitter.php';
 
 function main(): void {
@@ -8,7 +8,7 @@ function main(): void {
     $dias_da_semana = ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta'];
 
     if ($diaSemana < 5 & $diaSemana > -1) {
-        $scrapper = new Scrapper();
+        $scrapper = new Scraper();
         $cardapio = $scrapper->getCardapioDia($diaSemana);
         if (empty($cardapio)) {
             echo 'Deu ruim no site da uerj :p';

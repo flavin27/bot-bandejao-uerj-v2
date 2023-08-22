@@ -2,6 +2,17 @@
 
 Esse bot é um script em PHP que faz o scraping da página web do restaurante da UERJ para obter o cardápio diário e posta as informações no Twitter usando a API do Twitter. O bot foi configurado para rodar em um contêiner Docker para facilitar a implantação e a execução.
 
+## Tecnologias:
+
+- PHP
+- cURL
+- TwitterAPI
+- Docker
+- Testes unitários (wip)
+
+
+
+
 ## Pré-requisitos:
 
 - Docker instalado e configurado no seu ambiente.
@@ -11,7 +22,7 @@ Esse bot é um script em PHP que faz o scraping da página web do restaurante da
 1. Clone este repositório para o seu ambiente local:
 
 ```
-git clone https://github.com/seu-usuario/bot-cardapio-uerj.git
+git clone https://github.com/flavin27/bot-bandejao-uerj-v2.git
 ```
 2. Acesse o diretório do projeto:
 

@@ -1,6 +1,6 @@
 <?php
 
-class Scrapper
+class Scraper
 {
     private string $url = "https://www.restauranteuniversitario.uerj.br/";
 
