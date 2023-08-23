@@ -7,25 +7,28 @@ class ScraperTest extends TestCase
 {
     public function testScrapeDataReturnsArray()
     {
-        $scrapper = new Scraper();
-        $result = $scrapper->scrape_data();
-        print_r($result);
-
+        $scraper = new Scraper();
+        $result = $scraper->scrape_data();
         $this->assertIsArray($result);
     }
-    public function testScrapeDataShouldReturnFiveLengthArray() {
-        $scrapper = new Scraper();
-        $result = $scrapper->scrape_data();
+    public function testScrapeDataShouldReturnFiveLengthArray()
+    {
+        $scraper = new Scraper();
+        $result = $scraper->scrape_data();
         $length = count(array_filter($result, 'is_array'));
         $this->assertEquals(5, $length);
     }
-
     public function testGetCardapioDiaReturnsArray()
     {
-        $scrapper = new Scraper();
-        $result = $scrapper->getCardapioDia(2);
-
+        $scraper = new Scraper();
+        $result = $scraper->getCardapioDia(2);
         $this->assertIsArray($result);
     }
-
+    public function testGetCardapioDiaReturnsSixLengthArray()
+    {
+        $scraper = new Scraper();
+        $result = $scraper->getCardapioDia(2);
+        $length = count($result);
+        $this->assertEquals(6, $length);
+    }
 }

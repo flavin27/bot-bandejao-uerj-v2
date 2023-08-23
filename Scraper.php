@@ -95,10 +95,10 @@ class Scraper
 
     public function getCardapioDia(int $dia): array
     {
-        if (empty($cardapio)) {
+        $cardapio = $this->scrape_data();
+        if (count($cardapio) === 0) {
             return [];
         }
-        $cardapio = $this->scrape_data();
         return $cardapio[$dia];
     }
 }

@@ -8,13 +8,12 @@ function main(): void {
     $dias_da_semana = ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta'];
 
     if ($diaSemana < 5 & $diaSemana > -1) {
-        $scrapper = new Scraper();
-        $cardapio = $scrapper->getCardapioDia($diaSemana);
-        if (empty($cardapio)) {
-            echo 'Deu ruim no site da uerj :p';
+        $scraper = new Scraper();
+        $cardapio = $scraper->getCardapioDia($diaSemana);
+        if (count($cardapio) === 0) {
+            echo 'Deu ruim no site da UERJ :p';
             die;
         }
-
         $client = new Twitter;
         $payload = $dataHoje. "-" . $dias_da_semana[$diaSemana] . PHP_EOL . "Saladas: $cardapio[0]" . PHP_EOL . "Prato principal: " . $cardapio[1] . PHP_EOL . "Ovolactovegetariano: " . $cardapio[2] . PHP_EOL . "Guarnição: " . $cardapio[3] . PHP_EOL . "Acompanhamentos: " . $cardapio[4] . PHP_EOL . "Sobremesa: " . $cardapio[5];
 

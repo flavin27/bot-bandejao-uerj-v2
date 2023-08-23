@@ -3,7 +3,7 @@
         'name' => 'flaivnho/pacote',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '752b5c086286fbf7f6a3ef47cbc53f73fea3bbb4',
+        'reference' => '86424aae29fc45b9be3a31763c2c8e9315bc02d1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'flaivnho/pacote' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '752b5c086286fbf7f6a3ef47cbc53f73fea3bbb4',
+            'reference' => '86424aae29fc45b9be3a31763c2c8e9315bc02d1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
