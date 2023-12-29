@@ -4,7 +4,6 @@
   "require": {
     "vlucas/phpdotenv": "^5.5",
     "abraham/twitteroauth": "^5.0",
-    "phpunit/phpunit": "^10.3",
     "ext-dom": "*",
     "ext-libxml": "*",
     "ext-curl": "*"
