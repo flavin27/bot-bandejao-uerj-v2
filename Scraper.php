@@ -2,7 +2,7 @@
 
 class Scraper
 {
-    private string $url = "https://www.restauranteuniversitario.uerj.br/";
+    private string $url = "https://www.restauranteuniversitario.uerj.br/#cardapio";
 
     public function scrape_data(): array
     {
