@@ -1,8 +1,6 @@
 name: run bot script without docker
 on:
   workflow_dispatch:
-permissions:
-  contents: read
 jobs:
   build:
     runs-on: ubuntu-latest
