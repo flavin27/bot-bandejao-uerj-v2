@@ -20,8 +20,21 @@ jobs:
           envkey_ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
           envkey_ACCESS_TOKEN_SECRET: ${{secrets.ACCESS_TOKEN_SECRET}}
           file_name: .env
+
+      - name: Clear Composer Cache
+        run: composer clear-cache
+
+      - name: Update Composer
+        run: composer self-update
+
+      - name: Remove Composer Files
+        run: |
+          rm -rf vendor
+          rm -f composer.lock
+
       - name: Install Composer Dependencies
         run: composer install --ignore-platform-reqs
+
       - name: Run php script
         run: php main.php
 
