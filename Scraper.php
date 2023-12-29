@@ -8,6 +8,8 @@ class Scraper
     {
         $content = $this->fetchContent();
 
+
+
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
         $dom->loadHTML($content);
@@ -37,14 +39,19 @@ class Scraper
         return array_chunk($pratos, 6);
     }
 
-    private function fetchContent(): string
+    public function fetchContent(): string
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $content = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Erro cURL: ' . curl_error($ch);
+            die;
+        }
         curl_close($ch);
+
         return $content;
     }
 
@@ -102,6 +109,7 @@ class Scraper
         return $cardapio[$dia];
     }
 }
+
 
 
 
