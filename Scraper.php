@@ -121,10 +121,7 @@ class Scraper
     }
 }
 
-$client  = new Scraper();
-$cardapio = $client->getCardapioDia(3);
 
-var_dump($cardapio);
 
 
 
