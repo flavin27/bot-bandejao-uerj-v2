@@ -110,6 +110,8 @@ class Scraper
 
         $cardapio[$dia] = $this->addGlutenAlert($cardapio[$dia]);
         $cardapio[$dia] = $this->addLactoseAlert($cardapio[$dia]);
+        $cardapio[$dia] = $this->normalizeSpaces($cardapio[$dia]);
+
 
         return $cardapio[$dia];
     }
@@ -149,7 +151,23 @@ class Scraper
 
         return $stringsFormatadas;
     }
+
+    public function normalizeSpaces(array $cardapio): array
+    {
+        $stringCorrigida = [];
+
+        foreach ($cardapio as $prato) {
+            $resultado = preg_replace('/\s{2,}/u', ' ', $prato);
+
+            $stringCorrigida[] = $resultado;
+
+
+        }
+        return $stringCorrigida;
+    }
+
 }
+
 
 
 
