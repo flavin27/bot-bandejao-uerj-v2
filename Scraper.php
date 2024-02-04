@@ -8,8 +8,6 @@ class Scraper
     {
         $content = $this->fetchContent();
 
-
-
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
         $dom->loadHTML($content);
@@ -106,9 +104,28 @@ class Scraper
         if (count($cardapio) === 0) {
             return [];
         }
+
+        $string = $this->addSpace($cardapio[$dia][4]);
+
+        $cardapio[$dia][4] = $string;
         return $cardapio[$dia];
     }
+
+    public function addSpace(string $string): string
+    {
+        $resultado = preg_replace('/(parboilizado)(arroz)/', '$1, $2', $string);
+
+        $stringCorrigida = preg_replace('/(integral)(feijão)/', '$1, $2', $resultado);
+
+        return $stringCorrigida;
+    }
 }
+
+$client  = new Scraper();
+$cardapio = $client->getCardapioDia(3);
+
+var_dump($cardapio);
+
 
 
 
