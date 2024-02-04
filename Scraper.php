@@ -106,8 +106,10 @@ class Scraper
         }
 
         $string = $this->addSpace($cardapio[$dia][4]);
-
         $cardapio[$dia][4] = $string;
+
+        $cardapio[$dia] = $this->addGlutenAlert($cardapio[$dia]);
+
         return $cardapio[$dia];
     }
 
@@ -118,6 +120,20 @@ class Scraper
         $stringCorrigida = preg_replace('/(integral)(feijão)/', '$1, $2', $resultado);
 
         return $stringCorrigida;
+    }
+
+    public function addGlutenAlert(array $cardapio): array
+    {
+        $stringsFormatadas = [];
+
+        foreach ($cardapio as $prato) {
+            $resultado = preg_replace('/(glúten)/i', ' ($1) ', $prato);
+
+            $stringsFormatadas[] = $resultado;
+        }
+
+
+        return $stringsFormatadas;
     }
 }
 
