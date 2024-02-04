@@ -109,6 +109,7 @@ class Scraper
         $cardapio[$dia][4] = $string;
 
         $cardapio[$dia] = $this->addGlutenAlert($cardapio[$dia]);
+        $cardapio[$dia] = $this->addLactoseAlert($cardapio[$dia]);
 
         return $cardapio[$dia];
     }
@@ -135,7 +136,21 @@ class Scraper
 
         return $stringsFormatadas;
     }
+
+    public function addLactoseAlert(array $cardapio): array
+    {
+        $stringsFormatadas = [];
+
+        foreach ($cardapio as $prato) {
+            $resultado = preg_replace('/(lactose)/i', ' ($1) ', $prato);
+
+            $stringsFormatadas[] = $resultado;
+        }
+
+        return $stringsFormatadas;
+    }
 }
+
 
 
 
