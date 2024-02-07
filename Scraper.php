@@ -42,6 +42,7 @@ class Scraper
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_DNS_SHUFFLE_ADDRESSES, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $content = curl_exec($ch);
         if (curl_errno($ch)) {
@@ -168,7 +169,9 @@ class Scraper
 
 }
 
-
+$cliet = new Scraper();
+$cliet->scrape_data();
+var_dump($cliet->getCardapioDia(0));
 
 
 
