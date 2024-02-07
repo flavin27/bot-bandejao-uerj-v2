@@ -43,6 +43,7 @@ class Scraper
         curl_setopt($ch, CURLOPT_URL, $this->url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_DNS_SHUFFLE_ADDRESSES, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $content = curl_exec($ch);
         if (curl_errno($ch)) {
