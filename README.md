@@ -1,5 +1,10 @@
 # Bot do Cardápio do Restaurante da UERJ
 
+<p align="center"><img src="https://github.com/flavin27/bot-bandejao-uerj-v2/blob/main/botuerj.png" width="400" alt="Bot Logo"></p>
+
+
+## Sobre:
+
 Esse bot é um script em PHP que faz o scraping da página web do restaurante da UERJ para obter o cardápio diário e posta as informações no Twitter usando a API do Twitter. O bot foi configurado para rodar em um contêiner Docker para facilitar a implantação e a execução.
 
 ## Tecnologias:
