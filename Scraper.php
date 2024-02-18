@@ -103,7 +103,7 @@ class Scraper
     public function getCardapioDia(int $dia): array
     {
         $cardapio = $this->scrape_data();
-        if (count($cardapio) === 0) {
+        if (count($cardapio) === 0 || $dia < 0 || $dia > 4 || !isset($cardapio[$dia])) {
             return [];
         }
 
@@ -170,9 +170,8 @@ class Scraper
 
 }
 
-$cliet = new Scraper();
-$cliet->scrape_data();
-var_dump($cliet->getCardapioDia(0));
+
+
 
 
 
